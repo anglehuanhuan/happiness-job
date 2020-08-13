@@ -1,0 +1,133 @@
+.allPositions-container{
+    .myapply-item{
+        .myapply-info{
+            .myapply-li{
+                margin: 10px;
+                .info-name{
+                    font-family: PingFangSC;
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: rgb(0, 0, 0);
+                    font-style: normal;
+                    letter-spacing: 0px;
+                    line-height: 22px;
+                    text-decoration: none;
+                    display: inline-block;
+                    width:45%;
+                    text-align: right;
+                }
+                .info-select{
+                    width: 80px;
+                    height: 24px;
+                    left: 162px;
+                    top: 120px;
+                    z-index: 42;
+                    border-color: rgb(187, 187, 187);
+                    border-width: 1px;
+                    border-style: solid;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-style: normal;
+                    opacity: 1;
+                    border-radius: 8%;
+                    outline: none;
+                }
+                
+            }
+        }
+    }
+
+    .position-item{
+        .position-split{
+            margin: 5px 15px;
+            border: none;
+            border-top: .5px solid #ddd;
+        }
+        .position-info{
+            border-bottom: 1px solid #ddd;
+            padding: 5px 15px;
+            margin: 15px;
+            .position-li{
+                margin-bottom: 8px;
+                clear: both;
+                overflow: hidden;
+                .info-left{
+                    float: left;
+                    .position-name{
+                        font-family: PingFangSC;
+                        font-weight: 700;
+                        font-size: 16px;
+                        color: rgb(0, 0, 0);
+                        font-style: normal;
+                        letter-spacing: 0px;
+                        line-height: 22px;
+                        text-decoration: none;
+                        margin-bottom: 5px;
+                    }
+                    .position-name-sub{
+                        font-family: PingFangSC;
+                        font-weight: 400;
+                        font-size: 12px;
+                        color: rgba(153, 153, 153, 1);
+                        font-style: normal;
+                        letter-spacing: 0px;
+                        line-height: 17px;
+                        text-decoration: none;
+                    }
+                }
+                .info-right{
+                    float: right;
+                    font-family: "PingFangSC";
+                    // color: rgba(213, 13, 13, 1);
+                    font-style: normal;
+                    letter-spacing: 0px;
+                    text-decoration: none;
+                    .position-value{
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: rgba(213, 13, 13, 1);
+                    }
+                    .position-value-unit{
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 17px;
+                        color: rgba(213, 13, 13, 1);
+                    }
+                    .position-desc{
+                        font-family: PingFangSC;
+                        font-weight: 400;
+                        font-size: 12px;
+                        color: rgb(153, 153, 153);
+                        font-style: normal;
+                        letter-spacing: 0px;
+                        line-height: 17px;
+                        text-decoration: none;
+                        text-align: right;
+                        margin-top: 5px;
+                    }
+                    
+                }
+                .position-detal-name{
+                    font-family: PingFangSC;
+                    font-weight: 700;
+                    font-size: 12px;
+                    color: rgba(19, 19, 19, 1);
+                    font-style: normal;
+                    letter-spacing: 0px;
+                    line-height: 17px;
+                    text-decoration: none;
+                }
+                .position-detail-value{
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: rgba(19, 19, 19, 1);
+                    font-style: normal;
+                    letter-spacing: 0px;
+                    line-height: 17px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.moreServices-container{
+    .servies-item{
+        margin: 25px 20px;
+        .servies-item-title{
+            font-weight: 700;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            line-height: 28px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: .5px solid #ddd;
+        }
+        .servies-item-desc{
+            margin-top: 10px;
+            .item-desc-title{
+                font-weight: 700;
+                font-size: 14px;
+                color: rgb(0, 0, 0);
+                line-height: 20px;
+            }
+            .item-desc-text{
+                font-weight: 400;
+                font-size: 12px;
+                color: rgb(77, 77, 77);
+                line-height: 15px;
+            }
+        }
+        .servies-item-btnbox{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 12px;
+            margin-top: 12px;
+            border-top: .5px solid #ddd;
+            .btn{
+                color: rgb(255, 255, 255);
+                font-size: 14px;
+                width: 32%;
+            }
+            .btn1{
+                background-color: rgb(255, 153, 89);
+            }
+            .btn2{
+                background-color: rgb(39, 177, 72);
+            }
+            .btn3{
+                background-color: rgb(0, 155, 180);
+            }
+        }
+    }
+}

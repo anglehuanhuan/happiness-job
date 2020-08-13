@@ -1,0 +1,56 @@
+$colororigin: #ffa96e;
+$colorgreen: #34c758;
+$colorgreen2: #0050b3;
+$colorheader: #009bb4;
+.myPromotion-container{
+    .basin-info-container{
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        padding: 15px 15px 10px 15px;
+        margin: 10px 15px;
+        .left{
+            width:70%;
+            .info-name{
+                font-weight: 600;
+                font-size: 16px;
+            }
+            .info-value{
+                color:#5a5a5a;
+            }
+        }
+        .right{
+            width: 30%;
+        }
+    }
+    .table-container{
+        margin: 10px 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+        
+        .table-title{
+            font-weight: 600;
+            text-align: center;
+            font-size: 10px;
+        }
+        .table-box{
+            width: 100%;
+            text-align: center;
+            border-color:#ccc;
+            thead{
+                font-weight: normal;
+                background-color: $colororigin;
+                font-size: 10px;
+            }
+            tbody{
+                font-size: 10px;
+            }
+        }
+    }
+    .moreserves-box{
+        margin: 10px 15px;
+        .moreserves{
+            background-color: $colorgreen;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.toApply-container{
+    .inp-box{
+        padding:15px;
+        .inp-item{
+            display: flex;
+            margin-top: 15px;
+            .inp-name{
+                width: 30%;
+                text-align: right;
+                font-weight: 700;
+                font-size: 16px;
+                color: rgb(0, 0, 0);
+                line-height: 22px;
+            }
+            .inp-value-box{
+                width: 60%;
+                position: relative;
+                height: 30px;
+                z-index: 59;
+                border-color: rgb(187, 187, 187);
+                border-width: 1px;
+                border-style: solid;
+                font-size: 12px;
+                text-align: left;
+                font-weight: normal;
+                font-style: normal;
+                opacity: 1;
+            }
+            .inp-value{
+                padding: 0 8px;
+                display: block;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                font-size: inherit;
+                font-weight: inherit;
+                font-style: inherit;
+                color: inherit;
+                border: none;
+                border-radius: inherit;
+                outline: none;
+                background: inherit;
+                text-align: inherit;
+                line-height: inherit;
+                resize: none;
+            }
+        }
+    }
+    .btn-box{
+        padding: 15px;
+        text-align: center;
+        .btn{
+            width: 80%;
+            margin:auto;
+            background-color: rgb(52, 199, 88);
+            color: rgb(255, 255, 255);
+        }
+    }
+}

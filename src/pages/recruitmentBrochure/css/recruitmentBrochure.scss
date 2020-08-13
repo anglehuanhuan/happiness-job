@@ -1,0 +1,144 @@
+.recruitmentBrochure-container{
+    font-family: "PingFangSC";
+    .info-box{
+        padding:15px;
+
+        .info-item{
+            border-bottom: .5px solid #ddd;
+            margin: 0 15px;
+            padding: 8px 0;
+            &.info-title{
+                font-weight: 700;
+                font-size: 20px;
+                color: rgb(0, 0, 0);
+                font-style: normal;
+                letter-spacing: 0px;
+                line-height: 28px;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-between;
+                // .info-name{
+                // }
+                // .info-code{
+                // }
+            }
+            &.info-detail{
+                .detail-item{
+                    font-weight: 700;
+                    font-size: 14px;
+                    font-style: normal;
+                    letter-spacing: 0px;
+                    line-height: 20px;
+                    text-decoration: none;
+                    .detail-item-name{
+                        color: rgb(0, 0, 0);
+                    }
+                    .detail-item-value{
+                        color: rgb(77, 77, 77);
+                    }
+                }
+            }
+            &.info-duty{
+                .duty-title{
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, 1);
+                    line-height: 20px;
+                }
+                .duty-text{
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: rgb(77, 77, 77);
+                    line-height: 24px;
+                }
+            }
+            &.info-work{
+                .work-item{
+                    .work-item-name{
+                        font-weight: 700;
+                        font-size: 14px;
+                        color: rgba(0, 0, 0, 1);
+                        line-height: 20px;
+                    }
+                    .work-item-value{
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: rgb(77, 77, 77);
+                        line-height: 20px;
+                    }
+                }
+            }
+            &.info-salary{
+                .salary-title{
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: rgba(213, 13, 13, 1);
+                    line-height: 20px;
+                }
+                .salary-text{
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: rgb(77, 77, 77);
+                    line-height: 24px;
+                }
+                .salary-remarks{
+                    overflow: hidden;
+                    .remarks-btn{
+                        width: 80px;
+                        float: right;
+                        background-color: rgb(0, 155, 180);
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .info-action{
+        display: flex;
+        padding: 0 15px;
+        margin: 10px 0;
+        .left{
+            width:40%;
+            margin-right: 10px;
+            padding-right: 10px;
+            border-right: .5px solid #ddd;
+            img{
+                width: 100%;
+            }
+        }
+        .right{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .remarks-btn{
+                width: 100%;
+            }
+            .btn1{
+                font-size: 14px;
+                background-color: rgb(255, 77, 79);
+                color: #fff;
+                vertical-align: middle;
+                img{
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+                margin-bottom: 10px;
+            }
+            .btn2{
+                flex-grow: 1;
+                font-size: 14px;
+                background-color: rgb(52, 199, 88);
+                color: #fff;
+               
+                img{
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+                span{
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+} 
