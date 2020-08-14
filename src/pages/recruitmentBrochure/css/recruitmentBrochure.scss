@@ -130,7 +130,9 @@
                 font-size: 14px;
                 background-color: rgb(52, 199, 88);
                 color: #fff;
-               
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 img{
                     vertical-align: middle;
                     margin-right: 10px;

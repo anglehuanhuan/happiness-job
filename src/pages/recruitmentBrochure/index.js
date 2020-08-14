@@ -53,11 +53,11 @@ export default class RecruitmentBrochure extends React.Component{
         }
     }
     componentDidMount(){
-        console.log(this.props.location.search);
+        // console.log(this.props.location.search);
         const { position } = queryString.parse(this.props.location.search);
-        console.log(position);
+        // console.log(position);
         const positionInfo = JSON.parse(position);
-        console.log(positionInfo);
+        // console.log(positionInfo);
         this.setState({
             positionInfo
         })
@@ -124,7 +124,8 @@ export default class RecruitmentBrochure extends React.Component{
                     <div className="right">
                         <Button className="remarks-btn btn1"><img src={shareimg} alt=""/>分享职位</Button>
                         <Button className="remarks-btn btn2" onClick={e=> this.gotoApply()}>
-                            <img src={addimg} alt=""/>我要申请
+                            <img src={addimg} alt=""/>
+                            <span>我要申请</span>
                         </Button>
                     </div>
 
@@ -132,16 +133,19 @@ export default class RecruitmentBrochure extends React.Component{
                 
             </div>
             <FooterComponent />
-            {/* <Modal
-                visible={this.state.modal1}
-                transparent
-                onClose={this.onClose('modal1')}
-                footer={null}
-                wrapProps={{ onTouchStart: this.onWrapTouchStart }}
-                >
-                <div style={{ height: 100, overflow: 'scroll' }}>
-                </div>
-            </Modal> */}
+            <Modal
+                    visible={this.state.modal1}
+                    transparent
+                    onClose={this.onClose('modal1')}
+                    footer={false}
+                    wrapProps={{ onTouchStart: this.onWrapTouchStart }}
+                    className="remarks-modal"
+                    >
+                    <div className="remarks-modal-container">
+                        <p>7-11月3个月可上岗；12-2月1-2周可上岗；3-6月1个月可上岗，具体以机场安排为准，不作时限承诺。</p>
+                    </div>
+                </Modal>
+                <FooterComponent />
         </div>
     }
 }
