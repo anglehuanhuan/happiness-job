@@ -137,7 +137,7 @@ export default class AllPositions extends React.Component{
                                         })
                                     }
                                 </select>
-                                <span className="">(必填)</span>
+                                <span className="redmust">(必填)</span>
                             </li>
                             <li  className="myapply-li">
                                 <span className="info-name">性别：</span>
@@ -149,14 +149,14 @@ export default class AllPositions extends React.Component{
                                         })
                                     }
                                 </select>
-                                <span className="">(必填)</span>
+                                <span className="redmust">(必填)</span>
                             </li>
                             <li  className="myapply-li">
                                 <span className="info-name">学历：</span>
                                 <select  className="info-select" value={this.state.education} onChange={this.handleChange("education")}>
                                         <option value="">请选择</option>
                                     {
-                                        lodash.map(this.state.c, (item,index) => {
+                                        lodash.map(this.state.educationList, (item,index) => {
                                             return <option key={index} index={index} value={item.value}>{item.label}</option>
                                         })
                                     }

@@ -25,12 +25,24 @@ $colorheader: #009bb4;
                 font-style: normal;
                 // letter-spacing: 0px;
                 text-decoration: none;
+                &.active0{
+                    color: rgb(255, 58, 48);
+                }
+                &.active1{
+                    color: rgba(255, 149, 2, 1);
+                }
+                &.active2{
+                    color: rgb(52, 199, 88);
+                }
             }
         }
     }
     .myapply-btn{
         margin:15px 0;
         .btn{
+            height: 35px;
+            line-height: 35px;
+            font-size: 16px;
             &.active{
                 color: #fff;
                 background-color: $colorgreen;

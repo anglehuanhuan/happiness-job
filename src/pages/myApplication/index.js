@@ -45,7 +45,7 @@ export default class MyApplication extends React.Component{
                 ]}
                 ><span className="header-title">我的申请</span></NavBar>
                 <div className="content-container">
-                    <div className="myapply-item">
+                    {/* <div className="myapply-item">
                         <ul className="myapply-info">
                             <li  className="myapply-li"><span className="info-name">申请岗位：</span><span className="info-value">udernsdjfh nusdihf</span></li>
                             <li  className="myapply-li"><span className="info-name">申请时间：</span><span className="info-value">LV.12</span></li>
@@ -68,14 +68,17 @@ export default class MyApplication extends React.Component{
                                 <span className="span1">后失效。</span>
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                     {
                         lodash.map(this.state.myApplyData, (item,index) => {
                             return <div className="myapply-item">
                             <ul className="myapply-info">
                                 <li  className="myapply-li"><span className="info-name">申请岗位：</span><span className="info-value">{item.applyPosition}</span></li>
                                 <li  className="myapply-li"><span className="info-name">申请时间：</span><span className="info-value">{item.applyTime}</span></li>
-                                <li  className="myapply-li"><span className="info-name">申请状态：</span><span className="info-value">{item.applyStatus ===1 ?"申请中":""}{item.applyStatus ===2 ?"成功":""}{item.applyStatus ===0 ?"失败":""}</span></li>
+                                <li  className="myapply-li">
+                                    <span className="info-name">申请状态：</span>
+                                    <span className={`info-value active${item.applyStatus}`}>{item.applyStatus ===1 ?"申请中":""}{item.applyStatus ===2 ?"申请成功":""}{item.applyStatus ===0 ?"已失效":""}</span>
+                                </li>
                             </ul>
                             <div  className="myapply-btn">
                                 <Button  className={item.applyStatus ===1 ?"btn active":"btn inactive"} size="small">邀请助力</Button>
