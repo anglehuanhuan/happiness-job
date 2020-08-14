@@ -8,7 +8,7 @@ import  "./css/home.scss"
 import usersvg from "../../common/svg/user.svg"
 import apply from "../../common/svg/apply.svg"
 import promotion from "../../common/svg/promotion.svg"
-import linesvg from "../../common/svg/line.svg"
+import ersvg from "../../common/svg/er.svg"
 
 export default class Home extends React.Component{
     constructor(props){ 
@@ -52,13 +52,13 @@ export default class Home extends React.Component{
             <NavBar
                 className="header-container"
                 leftContent={[
-                    <img src={usersvg} alt=""/>,
-                    <span className="user-name">user name</span>
+                    <img src={usersvg} alt="" onClick={e => this.gotoMypromotion()}/>,
+                    <span className="user-name" onClick={e => this.gotoMypromotion()}>user name</span>
                 ]}
                 rightContent={[
-                    <img alt="我的二维码"/>
+                    <img alt="" src={ersvg}/>
                 ]}
-                ><span className="header-title">安乐就业</span></NavBar>
+                ><span className="header-title home">安乐就业</span></NavBar>
             <div className="content-container">
                 <div className="banner">
                     <div className="swiper-container">

@@ -22,6 +22,9 @@ body,html,div,p,a,img,ul,li{
         height: 45px;
         .header-title{
           font-weight: 600;
+          &.home{
+            font-size: 22px;
+          }
         }
         .user-name{
           font-weight: 400;
