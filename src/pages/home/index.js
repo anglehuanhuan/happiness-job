@@ -14,9 +14,11 @@ export default class Home extends React.Component{
     constructor(props){ 
         super(props)
         this.state={
-            positionTypeData: [{name: "国企", value:23},{name: "国企2", value:232},{name: "国企3", value:223},{name: "国企4", value:323}],
+            classifyCount: [{name: "国企", value:23},{name: "国企2", value:232},{name: "国企3", value:223},{name: "国企4", value:323}],
+            totalCount: 0,
             sliderSwiper: [],
             imgHeight:150,
+            comIntroduce: ""
         }
     }
 
@@ -26,6 +28,38 @@ export default class Home extends React.Component{
 
     getlist = () => {
         CommonApi.getList()
+        .then(res => {
+            this.setState({
+                classifyCount: res.classifyCount,
+                totalCount: res.totalCount
+            })
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    };
+
+    getIntroduce = () => {
+        CommonApi.getIntroduce()
+        .then(res => {
+            this.setState({
+                comIntroduce: res.comIntroduce,
+                ansIntroduce: res.ansIntroduce?JSON.parse(res.ansIntroduce): []
+            })
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    }
+
+    getQrcode = () => {
+        CommonApi.getQrcode()
         .then(res => {
             console.log(res)
         })
@@ -44,10 +78,12 @@ export default class Home extends React.Component{
             });
           }, 100);
           this.getlist();
+          this.getIntroduce();
+          this.getQrcode();
     }
 
     render(){
-        const {positionTypeData} = this.state;
+        const {classifyCount, totalCount, comIntroduce, ansIntroduce} = this.state;
         return  <div className="container">
             <NavBar
                 className="header-container"
@@ -98,15 +134,15 @@ export default class Home extends React.Component{
                 <div className="content-module">
                     <div className="positon-title">招聘中的岗位</div>
                     <div className="text-center">
-                        <span className="positionNum">233</span>
+                        <span className="positionNum">{totalCount}</span>
                         <span className="positon-unit">个</span>
                     </div>
                     <div className="position-box">
                         {
-                            lodash.map(positionTypeData, (dataItem, dataIndex) => {
+                            lodash.map(classifyCount, (dataItem, dataIndex) => {
                                 return <div className="positionItem" key={dataIndex}>
-                                    <span className="position-name">{dataItem.name} : </span>
-                                    <span className="position-value">{dataItem.value}</span>
+                                    <span className="position-name">{dataItem.classify} : </span>
+                                    <span className="position-value">{dataItem.count}</span>
                                 </div>
                             })
                         }
@@ -115,12 +151,18 @@ export default class Home extends React.Component{
                 </div>
                 <div className="content-module">
                     <div className="text-center title2">我们的优势</div>
-                    <div className="text-content">发顺丰的方式发送的司法斯蒂芬很舒服士大夫类似的方式开发深刻的反思疯狂世界东方士大夫胜多负少，十分士大夫十分</div>
+                    <div className="text-content">{comIntroduce}</div>
                 </div>
                 <div className="content-module content-module-last">
                     <div className="text-center title3">职场优势</div>
-                    <div className="text-quest">问题：为妾请问</div>
-                    <div className="text-anser">发顺丰的方式发送的司法斯蒂芬很舒服士大夫类似的方式开发深刻的反思疯狂世界东方士大夫胜多负少，十分士大夫十分</div>
+                    {
+                        lodash.map(ansIntroduce, (item,index) => {
+                            return <div>
+                                <div className="text-quest">Q: {item.question}</div>
+                    <div className="text-anser">A: {item.answer}</div>
+                            </div>
+                        })
+                    }
                 </div>
             </div>
             <FooterComponent />

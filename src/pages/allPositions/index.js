@@ -2,7 +2,7 @@ import React from 'react';
 import lodash from "lodash";
 import queryString from "query-string";
 import { Button, Flex, Grid, Carousel, WingBlank, NavBar, Icon, PickerView } from 'antd-mobile';
-// import { Select } from 'antd';
+import {CommonApi} from "../../common/api/index.js"
 import FooterComponent from "../../common/component/FooterComponent"
 import "./css/allPositions.scss";
 // const {Option} = Select;
@@ -22,14 +22,14 @@ export default class AllPositions extends React.Component{
                 label: "2008",
                 value: "2008",
             },],
-            sexList:[{
+            sexyList:[{
                 label: "女",
                 value: "women",
             },{
                 label: "男",
                 value: "men",
             }],
-            educationList: [{
+            eduList: [{
                 label: "中专",
                 value: "1",
             },{
@@ -48,7 +48,7 @@ export default class AllPositions extends React.Component{
                 label: "博士",
                 value: "6",
             }],
-            contractValueList: [{
+            contactTypeList: [{
                 label: "派遣",
                 value: "1",
             },{
@@ -109,12 +109,42 @@ export default class AllPositions extends React.Component{
         e.preventDefault();
         this.setState({
             [str]:  e.target.value
+        },() => {
+            this.getPositionData();
         })
     }
     gotoDetail = obj => {
         console.log(obj);
         this.props.history.push({pathname:'/recruitmentBrochure',search: queryString.stringify({ position: JSON.stringify(obj) })});
     }
+
+    getPositionData = () => {
+        const param ={
+            birthYear: this.state.birthYear,
+            contactType: this.state.contactType,
+            edu: this.state.edu,
+            sexy: this.state.sexy
+        }
+        CommonApi.getAllPositionList(param)
+        .then(res => {
+            console.log(res);
+            this.setState({
+                // positionData: res
+            })
+            
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    };
+
+    componentDidMount(){
+        this.getPositionData();
+    }
+
     render(){
         return  <div className="allPositions-container container">
              <NavBar
@@ -141,10 +171,10 @@ export default class AllPositions extends React.Component{
                             </li>
                             <li  className="myapply-li">
                                 <span className="info-name">性别：</span>
-                                <select  className="info-select" value={this.state.sex} onChange={this.handleChange("sex")}>
+                                <select  className="info-select" value={this.state.sexy} onChange={this.handleChange("sexy")}>
                                         <option value="">请选择</option>
                                     {
-                                        lodash.map(this.state.sexList, (item,index) => {
+                                        lodash.map(this.state.sexyList, (item,index) => {
                                             return <option key={index} index={index} value={item.value}>{item.label}</option>
                                         })
                                     }
@@ -153,10 +183,10 @@ export default class AllPositions extends React.Component{
                             </li>
                             <li  className="myapply-li">
                                 <span className="info-name">学历：</span>
-                                <select  className="info-select" value={this.state.education} onChange={this.handleChange("education")}>
+                                <select  className="info-select" value={this.state.edu} onChange={this.handleChange("edu")}>
                                         <option value="">请选择</option>
                                     {
-                                        lodash.map(this.state.educationList, (item,index) => {
+                                        lodash.map(this.state.eduList, (item,index) => {
                                             return <option key={index} index={index} value={item.value}>{item.label}</option>
                                         })
                                     }
@@ -164,10 +194,10 @@ export default class AllPositions extends React.Component{
                             </li>
                             <li  className="myapply-li">
                                 <span className="info-name">合同性质：</span>
-                                <select  className="info-select" value={this.state.contractValue} onChange={this.handleChange("contractValue")}>
+                                <select  className="info-select" value={this.state.contactType} onChange={this.handleChange("contactType")}>
                                         <option value="">请选择</option>
                                     {
-                                        lodash.map(this.state.contractValueList, (item,index) => {
+                                        lodash.map(this.state.contactTypeList, (item,index) => {
                                             return <option key={index} index={index} value={item.value}>{item.label}</option>
                                         })
                                     }

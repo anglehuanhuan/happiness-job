@@ -3,7 +3,7 @@ import lodash from "lodash";
 import queryString from "query-string";
 import { Button, NavBar, Icon, Modal } from 'antd-mobile';
 import FooterComponent from "../../common/component/FooterComponent"
-// import MobileTable from "../../common/component/MobileTable"
+import {CommonApi} from "../../common/api/index.js"
 import "./css/recruitmentBrochure.scss";
 import im1 from "../../common/svg/v2_qdgcar.jpg"
 import addimg from "../../common/svg/add.svg"
@@ -52,6 +52,26 @@ export default class RecruitmentBrochure extends React.Component{
           e.preventDefault();
         }
     }
+
+    getPositionDatail = positionInfo => {
+        const param ={
+            postCode: positionInfo.postCode
+        }
+        CommonApi.getAPositionDetail(param)
+        .then(res => {
+            console.log(res);
+            this.setState({
+                // positionData: res
+            })
+            
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    };
     componentDidMount(){
         // console.log(this.props.location.search);
         const { position } = queryString.parse(this.props.location.search);
@@ -61,6 +81,7 @@ export default class RecruitmentBrochure extends React.Component{
         this.setState({
             positionInfo
         })
+        this.getPositionDatail(positionInfo)
     }
     render(){
         return  <div className="recruitmentBrochure-container container">

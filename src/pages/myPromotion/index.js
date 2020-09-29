@@ -3,6 +3,7 @@ import lodash from "lodash";
 import { Button, Flex, Grid, Carousel, WingBlank, NavBar, Icon } from 'antd-mobile';
 import FooterComponent from "../../common/component/FooterComponent"
 // import MobileTable from "../../common/component/MobileTable"
+import {CommonApi} from "../../common/api/index.js"
 import "./css/myPromotion.scss";
 
 export default class MyPromotion extends React.Component{
@@ -92,7 +93,55 @@ export default class MyPromotion extends React.Component{
     goback = () => {
         this.props.history.goBack()
     }
+
+    getUserInfo = () => {
+        CommonApi.getUserInfo()
+        .then(res => {
+            console.log(res);
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    };
+
+    getTeamInfo = () => {
+        const param ={
+            pageIndex: 0,
+            pageSize: 0,
+            params: {}
+        }
+        CommonApi.getTeamInfo(param)
+        .then(res => {
+            console.log(res);
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    };
+
+    getTeamPost = () => {
+        CommonApi.getTeamPost()
+        .then(res => {
+            console.log(res);
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
+        })
+    };
+
     componentDidMount(){
+        this.getUserInfo();
+        this.getTeamInfo();
+        this.getTeamPost();
     }
 
     render(){

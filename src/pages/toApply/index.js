@@ -1,9 +1,9 @@
 import React from 'react';
 import lodash from "lodash";
 import queryString from "query-string";
-import { Button, NavBar, Icon, Modal } from 'antd-mobile';
+import { Button, NavBar, Icon, Message } from 'antd-mobile';
 import FooterComponent from "../../common/component/FooterComponent"
-// import MobileTable from "../../common/component/MobileTable"
+import {CommonApi} from "../../common/api/index.js"
 import "./css/toApply.scss";
 import im1 from "../../common/svg/v2_qdgcar.jpg"
 import addimg from "../../common/svg/add.svg"
@@ -25,6 +25,27 @@ export default class ToApply extends React.Component{
     onInputChange = e => {
         this.setState({
             [e.target.name]: e.target.value
+        })
+    }
+
+    submitFun = () => {
+        const param ={
+            location: this.state.apllyerAdress,
+            mobile: this.state.apllyerPhone,
+            projectCode: this.state.apllyerPosition,
+            realName: this.state.apllyerName
+        }
+        CommonApi.submitApply(param)
+        .then(res => {
+            console.log(res);
+            this.goback();
+            
+        })
+        .catch( err => {
+            console.log(err);
+        })
+        .finally(() => {
+
         })
     }
     
@@ -76,7 +97,7 @@ export default class ToApply extends React.Component{
                     </div>
                 </div>
                 <div className="btn-box">
-                  <Button className="btn" size="small">提交</Button>
+                  <Button className="btn" size="small" onClick={this.submitFun}>提交</Button>
                 </div>
                 
                 
